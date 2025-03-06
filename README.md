@@ -1,2 +1,0 @@
-# Torneio
-Torneio

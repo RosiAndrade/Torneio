@@ -1,0 +1,30 @@
+//Rosilaine
+def calcular_pontos(partidas):
+    pontos_totais = 0
+
+    # Para cada saldo de pontos em partidas
+    for partida in partidas:
+        if partida == "ganhou":
+            pontos_totais += 3  # 3 pontos para vitória
+        elif partida == "perdeu":
+            pontos_totais += 1  # 1 ponto por participação
+    
+    return pontos_totais
+
+def minimo_vitorias_para_campeao(pontos_totais):
+    # Se o time tiver 12 ou mais pontos, ele é campeão
+    if pontos_totais >= 12:
+        return "Você já é campeão!"
+    else:
+        partidas_faltando = 12 - pontos_totais
+        return f"Você precisa ganhar pelo menos {partidas_faltando // 3} partidas para ser campeão!"
+
+# Exemplo de como o programa funciona
+partidas = ["ganhou", "perdeu", "ganhou", "perdeu", "ganhou", "ganhou"]
+pontos = calcular_pontos(partidas)
+print("Total de pontos:", pontos)
+
+# Verificar quantas vitórias são necessárias
+resultado = minimo_vitorias_para_campeao(pontos)
+print(resultado)
+
